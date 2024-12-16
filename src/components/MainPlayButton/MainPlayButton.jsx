@@ -3,9 +3,9 @@ import { Play } from 'lucide-react'
 
 const MainPlayButton = ({label}) => {
   return (
-    <button className='btn rounded-full flex gap-3 btn-primary w-auto items-center'>
+    <button className='btn rounded-full flex gap-2 hover:btn-outline bg-neutral-100 w-auto items-center text-black justify-center'>
         {label}    
-        <Play/>
+        <Play fill='black' size={15}/>
     </button> 
   )
 }

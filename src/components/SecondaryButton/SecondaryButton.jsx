@@ -3,9 +3,9 @@ import { ArrowRight } from 'lucide-react'
 
 const SecondaryButton = ({label}) => {
   return (
-    <button className='btn btn-outline rounded-full flex gap-3 btn-secondary w-auto items-center'>
+    <button className='btn rounded-full flex gap-2 justify-center w-auto items-center'>
         {label}    
-        <ArrowRight/>
+        <ArrowRight size={15} />
     </button> 
   )
 }

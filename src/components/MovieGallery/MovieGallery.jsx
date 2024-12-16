@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useQuery } from '@tanstack/react-query';
 import MoviePoster from '../MoviePoster/MoviePoster';
+import { Link } from 'react-router';
 
 const MovieGallery = () => {
 
@@ -18,9 +19,11 @@ const MovieGallery = () => {
       
 
   return (
-    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 p-10 '>
+    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:p-20 p-5 '>
         {data.data.movies.map((movie, index) => (
-            <MoviePoster key={index} title={movie.title} imgSrc={movie.medium_cover_image}/>
+            <Link to={'/movie/' + movie.id}>
+              <MoviePoster key={index} title={movie.title} imgSrc={movie.medium_cover_image}/>
+            </Link>
         ))}
     </div>
   )
