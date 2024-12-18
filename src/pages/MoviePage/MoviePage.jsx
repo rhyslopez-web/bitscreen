@@ -35,7 +35,7 @@ const MoviePage = () => {
         </div>
 
       {/* Movie Details */}
-        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-5 mb-10'>
 
           {/*Movie Info  */}
           <div className='flex flex-col gap-5 flex-wrap lg:w-full'>
@@ -61,11 +61,13 @@ const MoviePage = () => {
           </div>
 
           {/*Movie Poster */}
-          <div className='flex justify-center lg:justify-end order-first lg:order-last'>
+          <div className='flex justify-end lg:justify-end order-first lg:order-last'>
             <img src={data.data.movie.large_cover_image} alt="" className='shadow-2xl w-5/6 lg:w-1/2' />
           </div>
         
         </div>
+
+        <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-5'>Download Options</h3>
 
         {/* Download Options */}
         <div className='flex gap-3'>
