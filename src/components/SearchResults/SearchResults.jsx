@@ -24,20 +24,21 @@ const SearchResults = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="lg:p-20 p-5">
+    <div className="lg:p-20 p-5 min-h-screen">
         <h3 className="font-bold text-xl lg:text-2xl text-neutral-50 mb-10">
             Recently Added
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
-            {data.data.movies.map((movie, index) => (
-            <Link key={index} to={"/movie/" + movie.id}>
-                <MoviePoster
-                title={movie.title}
-                imgSrc={movie.medium_cover_image}
-                />
+          {
+          data.data.movie_count === 0 
+          ? <span>No results found</span> 
+          : data.data.movies.map((movie, index) => (
+            <Link key={index}>
+              <MoviePoster title={movie.title} imgSrc={movie.medium_cover_image} />
             </Link>
-            ))}
+          ))
+          }
         </div>
     </div>
   );
