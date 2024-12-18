@@ -33,12 +33,11 @@ const Header = () => {
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
-          <Search className="hidden" />
         <input
             type="text"
             placeholder="Search a movie"
             onChange={handleInputChange}
-            className="input transition ease-in-out lg:flex hidden w-full bg-neutral-700 opacity-45 focus:opacity-100 md:w-auto rounded-2xl"
+            className="input transition ease-in-out w-full bg-neutral-700 opacity-45 focus:opacity-100 md:w-auto rounded-2xl"
         />
         </div>
         <div className="dropdown dropdown-end">
