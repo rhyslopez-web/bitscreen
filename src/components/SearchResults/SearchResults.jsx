@@ -34,7 +34,7 @@ const SearchResults = () => {
           data.data.movie_count === 0 
           ? <span>No results found</span> 
           : data.data.movies.map((movie, index) => (
-            <Link key={index}>
+            <Link key={index} to={'/movie/' + movie.id}>
               <MoviePoster title={movie.title} imgSrc={movie.medium_cover_image} />
             </Link>
           ))
