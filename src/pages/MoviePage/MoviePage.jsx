@@ -28,7 +28,7 @@ const MoviePage = () => {
   if (error) return <p>Error: {error.message}</p> 
 
   return (
-    <div className=' relative flex flex-col justify-center py-20 p-5 lg:px-20'>
+    <div className=' relative flex flex-col justify-center py-10 p-5 lg:px-20'>
       {/* Movie Banner */}
         <div className='inset-0 absolute -z-10 bg-gradient-to-b from-black to-black h-screen'>
             <img src={data.data.movie.background_image} alt="" className='opacity-50 object-cover w-full h-full' />
@@ -50,10 +50,11 @@ const MoviePage = () => {
                   {/* <SecondaryButton label='Download Options' /> */}
               </div>
 
-              <div className='flex flex-col lg:flex-row gap-5 lg:gap-5 items-start lg:items-center'>
+              <div className='flex flex-col gap-5 lg:gap-5 items-start '>
+                {/* Rating */}
                 <StarRating rating={data.data.movie.rating}/>
-                <span className='hidden lg:flex'>|</span>
-                <div className='grid grid-cols-4 lg:grid-cols-6 gap-2'>
+                {/* Genre */}
+                <div className='grid grid-cols-4 lg:grid-cols-5 gap-2'>
                   {data.data.movie.genres.map((genre,index) => (
                     <InfoPill key={index} label={genre} />
                   ))}

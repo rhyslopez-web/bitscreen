@@ -3,6 +3,7 @@ import MainPlayButton from '../MainPlayButton/MainPlayButton'
 import SecondaryButton from '../SecondaryButton/SecondaryButton'
 import { useQuery } from '@tanstack/react-query'
 import MoviePoster from '../MoviePoster/MoviePoster'
+import { Link } from 'react-router'
 
 const FeaturedMovie = () => {
 
@@ -35,7 +36,9 @@ const FeaturedMovie = () => {
           
               <div className='flex gap-3'>
                   <MainPlayButton label='Watch Now'/>
-                  <SecondaryButton label='Details' />
+                  <Link to={'/movie/' + data.data.movie.id}>
+                    <SecondaryButton label='Details' />
+                  </Link>
               </div>
           </div>
 

@@ -5,6 +5,8 @@ import { Link } from 'react-router';
 
 const MovieGallery = () => {
 
+    
+
     const {data, error, isLoading} = useQuery({
         queryKey: ['movies'],
         queryFn: async () => {
