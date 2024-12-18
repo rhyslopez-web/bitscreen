@@ -19,7 +19,7 @@ const FeaturedMovie = () => {
   if (error) return <p>Error: {error.message}</p> 
 
   return (
-    <div className='h-4/5 flex flex-col justify-center lg:px-20 px-5 relative overflow-hidden'>
+    <div className='flex flex-col justify-center lg:px-20 px-5 relative overflow-hidden py-10'>
         <div className='inset-0 absolute -z-10 bg-gradient-to-b from-black to-black'>
           <img src={data.data.movie.background_image} alt="" className='opacity-20 object-cover w-full h-full' />
           <div className='w-full h-40 absolute bottom-0 bg-gradient-to-b from-transparent to-primary-blue'></div>
