@@ -19,12 +19,16 @@ const MovieGallery = () => {
       
 
   return (
-    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:p-20 p-5 '>
-        {data.data.movies.map((movie, index) => (
-            <Link to={'/movie/' + movie.id}>
-              <MoviePoster key={index} title={movie.title} imgSrc={movie.medium_cover_image}/>
-            </Link>
-        ))}
+    <div className='lg:p-20 p-5'>
+      <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-10'>Recently Added</h3>
+
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10'>
+          {data.data.movies.map((movie, index) => (
+              <Link to={'/movie/' + movie.id}>
+                <MoviePoster key={index} title={movie.title} imgSrc={movie.medium_cover_image}/>
+              </Link>
+          ))}
+      </div>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import MainPlayButton from '../MainPlayButton/MainPlayButton'
 import SecondaryButton from '../SecondaryButton/SecondaryButton'
 import { useQuery } from '@tanstack/react-query'
+import MoviePoster from '../MoviePoster/MoviePoster'
 
 const FeaturedMovie = () => {
 
@@ -24,17 +25,23 @@ const FeaturedMovie = () => {
           <div className='w-full h-40 absolute bottom-0 bg-gradient-to-b from-transparent to-primary-blue'></div>
         </div>
 
-        <div className='lg:w-1/2 flex flex-col gap-10'>
-            <div className='flex flex-col gap-5'>
-                <h2 className='font-bold text-5xl lg:text-7xl'>{data.data.movie.title}</h2>
-                <p className='md:text-md lg:text-sm'>{data.data.movie.description_intro}
-                </p>
-            </div>
-        
-            <div className='flex gap-3'>
-                <MainPlayButton label='Watch Now'/>
-                <SecondaryButton label='Details' />
-            </div>
+        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10'>
+          <div className='flex flex-col gap-10'>
+              <div className='flex flex-col gap-5'>
+                  <h2 className='font-bold text-5xl lg:text-7xl'>{data.data.movie.title}</h2>
+                  <p className='md:text-md lg:text-sm'>{data.data.movie.description_intro}
+                  </p>
+              </div>
+          
+              <div className='flex gap-3'>
+                  <MainPlayButton label='Watch Now'/>
+                  <SecondaryButton label='Details' />
+              </div>
+          </div>
+
+          <div className='flex justify-center lg:justify-end order-first lg:order-last'>
+            <img src={data.data.movie.large_cover_image} alt="" className='shadow-2xl w-1/2 lg:w-1/2' />
+          </div>
         </div>
     </div>
   )

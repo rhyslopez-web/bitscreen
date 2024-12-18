@@ -6,6 +6,7 @@ import SecondaryButton from '../../components/SecondaryButton/SecondaryButton'
 import StarRating from '../../components/StarRating/StarRating'
 import InfoPill from '../../components/InfoPill/InfoPill'
 import DownloadButton from '../../components/DownloadButton/DownloadButton'
+import MovieSuggestions from '../../components/MovieSuggestions/MovieSuggestions'
 
 
 const MoviePage = () => {
@@ -29,7 +30,7 @@ const MoviePage = () => {
   return (
     <div className=' relative flex flex-col justify-center py-20 p-5 lg:px-20'>
       {/* Movie Banner */}
-        <div className='inset-0 absolute -z-10 bg-gradient-to-b from-black to-black'>
+        <div className='inset-0 absolute -z-10 bg-gradient-to-b from-black to-black h-screen'>
             <img src={data.data.movie.background_image} alt="" className='opacity-50 object-cover w-full h-full' />
             <div className='w-full h-40 absolute bottom-0 bg-gradient-to-b from-transparent to-primary-blue'></div>
         </div>
@@ -46,7 +47,7 @@ const MoviePage = () => {
           
               <div className='flex gap-3'>
                   <MainPlayButton label='Watch Now'/>
-                  <SecondaryButton label='Download Options' />
+                  {/* <SecondaryButton label='Download Options' /> */}
               </div>
 
               <div className='flex flex-col lg:flex-row gap-5 lg:gap-5 items-start lg:items-center'>
@@ -67,14 +68,19 @@ const MoviePage = () => {
         
         </div>
 
-        <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-5'>Download Options</h3>
 
         {/* Download Options */}
-        <div className='flex gap-3'>
+        <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-10'>Download Options</h3>
+        <div className='flex gap-3 mb-20'>
           {data.data.movie.torrents.map((torrent, index) => (
             <DownloadButton key={index} quality={torrent.quality} type={torrent.type} link={torrent.url}/>
           ))}
         </div>
+
+        {/* Suggested Movies */}
+        <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-10'>Suggested Movies</h3>
+        <MovieSuggestions id={params.id} />
+
 
     </div>
   )
