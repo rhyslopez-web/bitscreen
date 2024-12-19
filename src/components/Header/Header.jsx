@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Search } from "lucide-react";
 import { useSearch } from "../../context/SearchContext";
+import { Link } from "react-router";
 
 const Header = () => {
     const { setSearchQuery } = useSearch();
@@ -10,26 +11,32 @@ const Header = () => {
     setSearchQuery(value)
   };
 
+  const clearQuery = () => {
+    setSearchQuery(undefined)
+  }
+
 
   return (
     <div className="navbar p-5 z-20 bg-black">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">
-          <svg
-            id="logo-72"
-            width="52"
-            height="44"
-            viewBox="0 0 53 44"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M23.2997 0L52.0461 28.6301V44H38.6311V34.1553L17.7522 13.3607L13.415 13.3607L13.415 44H0L0 0L23.2997 0ZM38.6311 15.2694V0L52.0461 0V15.2694L38.6311 15.2694Z"
-              className="ccustom"
-              fill="#f1f1f1"
-            ></path>
-          </svg>
-        </a>
+        <Link to='/' onClick={clearQuery}>
+          <a className="btn btn-ghost text-xl">
+            <svg
+              id="logo-72"
+              width="52"
+              height="44"
+              viewBox="0 0 53 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23.2997 0L52.0461 28.6301V44H38.6311V34.1553L17.7522 13.3607L13.415 13.3607L13.415 44H0L0 0L23.2997 0ZM38.6311 15.2694V0L52.0461 0V15.2694L38.6311 15.2694Z"
+                className="ccustom"
+                fill="#f1f1f1"
+              ></path>
+            </svg>
+          </a>
+        </Link>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
