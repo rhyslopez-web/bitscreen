@@ -6,7 +6,7 @@ import { useSearch } from '../../context/SearchContext'
 
 const Home = () => {
 
-  const { searchQuery } = useSearch(); // Access searchQuery from the context
+  const { searchQuery } = useSearch(); 
 
   return (
     <div className='font-poppins  text-neutral-50'>

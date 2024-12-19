@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query';
 import MoviePoster from '../MoviePoster/MoviePoster';
 import { Link } from 'react-router';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 const MovieGallery = () => {
 
@@ -16,7 +17,7 @@ const MovieGallery = () => {
         }, 
       })
     
-      if (isLoading) return <p>Loading data</p>
+      if (isLoading) return <LoadingScreen/>
       if (error) return <p>Error: {error.message}</p> 
       
 

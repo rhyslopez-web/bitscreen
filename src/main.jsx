@@ -7,6 +7,7 @@ import { Route } from 'react-router'
 import Layout from './components/Layout.jsx'
 import Home from './pages/Home/Home.jsx'
 import MoviePage from './pages/MoviePage/MoviePage.jsx'
+import { SearchProvider } from './context/SearchContext.jsx'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout/>}>
@@ -19,7 +20,9 @@ const client = new QueryClient()
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={client}>
-      <RouterProvider router={router}/>
+      <SearchProvider>
+        <RouterProvider router={router}/>
+      </SearchProvider>
     </QueryClientProvider>
   </StrictMode>,
 )

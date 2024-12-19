@@ -7,6 +7,7 @@ import StarRating from '../../components/StarRating/StarRating'
 import InfoPill from '../../components/InfoPill/InfoPill'
 import DownloadButton from '../../components/DownloadButton/DownloadButton'
 import MovieSuggestions from '../../components/MovieSuggestions/MovieSuggestions'
+import LoadingScreen from '../../components/LoadingScreen/LoadingScreen'
 
 
 const MoviePage = () => {
@@ -24,7 +25,7 @@ const MoviePage = () => {
     enabled: !!params.id
   })
 
-  if (isLoading) return <p>Loading data</p>
+  if (isLoading) return <LoadingScreen/>
   if (error) return <p>Error: {error.message}</p> 
 
   return (
@@ -54,7 +55,7 @@ const MoviePage = () => {
                 {/* Rating */}
                 <StarRating rating={data.data.movie.rating}/>
                 {/* Genre */}
-                <div className='grid grid-cols-4 lg:grid-cols-5 gap-2'>
+                <div className='grid grid-cols-3 lg:grid-cols-5 gap-2'>
                   {data.data.movie.genres.map((genre,index) => (
                     <InfoPill key={index} label={genre} />
                   ))}
@@ -72,7 +73,7 @@ const MoviePage = () => {
 
         {/* Download Options */}
         <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-10'>Download Options</h3>
-        <div className='flex gap-3 mb-20'>
+        <div className=' mb-20 grid grid-cols-2 lg:grid-cols-10 gap-2'>
           {data.data.movie.torrents.map((torrent, index) => (
             <DownloadButton key={index} quality={torrent.quality} type={torrent.type} link={torrent.url}/>
           ))}
