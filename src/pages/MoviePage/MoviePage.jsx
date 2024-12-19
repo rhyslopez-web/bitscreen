@@ -55,7 +55,7 @@ const MoviePage = () => {
                 {/* Rating */}
                 <StarRating rating={data.data.movie.rating}/>
                 {/* Genre */}
-                <div className='grid grid-cols-3 lg:grid-cols-5 gap-2'>
+                <div className='flex flex-wrap gap-2'>
                   {data.data.movie.genres.map((genre,index) => (
                     <InfoPill key={index} label={genre} />
                   ))}
@@ -73,7 +73,7 @@ const MoviePage = () => {
 
         {/* Download Options */}
         <h3 className='font-bold text-xl lg:text-2xl text-neutral-50 mb-10'>Download Options</h3>
-        <div className=' mb-20 grid grid-cols-2 lg:grid-cols-10 gap-2'>
+        <div className=' mb-20 flex flex-wrap gap-2'>
           {data.data.movie.torrents.map((torrent, index) => (
             <DownloadButton key={index} quality={torrent.quality} type={torrent.type} link={torrent.url}/>
           ))}
