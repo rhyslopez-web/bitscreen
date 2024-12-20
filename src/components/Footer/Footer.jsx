@@ -11,7 +11,7 @@ const Footer = () => {
         </div>
         
         <div className='text-center lg:text-end lg:w-1/4'>
-            <span className>This website is developed strictly for educational & demonstration purposes. I do not own/upload any of the data</span>
+            <span className>This website is developed strictly for educational & demonstration purposes. I do not own/upload any of the data.</span>
         </div>
 
 
