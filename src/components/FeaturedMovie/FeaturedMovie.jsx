@@ -11,7 +11,7 @@ const FeaturedMovie = () => {
   const {data, error, isLoading} = useQuery({
     queryKey: ['featuredMovie'],
     queryFn: async () => {
-      const res = await fetch('https://yts.mx/api/v2/movie_details.json?movie_id=1632')
+      const res = await fetch('https://yts.lt/api/v2/movie_details.json?movie_id=1632')
       if (!res.ok) throw new Error('Could not fetch data')
       return res.json()
     }, 

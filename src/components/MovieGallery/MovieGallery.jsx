@@ -11,7 +11,7 @@ const MovieGallery = () => {
     const {data, error, isLoading} = useQuery({
         queryKey: ['movies'],
         queryFn: async () => {
-          const res = await fetch('https://yts.mx/api/v2/list_movies.json?limit=30&page=500')
+          const res = await fetch('https://yts.lt/api/v2/list_movies.json?limit=30&page=500')
           if (!res.ok) throw new Error('Could not fetch data')
           return res.json()
         }, 

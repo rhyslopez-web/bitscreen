@@ -9,7 +9,7 @@ const MovieSuggestions = ({id}) => {
     const {data, error, isLoading} = useQuery({
         queryKey: ['suggestedMovies', id],
         queryFn: async () => {
-          const res = await fetch('https://yts.mx/api/v2/movie_suggestions.json?movie_id=' + `${id}`)
+          const res = await fetch('https://yts.lt/api/v2/movie_suggestions.json?movie_id=' + `${id}`)
           if (!res.ok) throw new Error('Could not fetch data')
           return res.json()
         }, 

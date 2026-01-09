@@ -16,7 +16,7 @@ const SearchResults = () => {
     queryKey: ["searchResults", searchQuery],
     queryFn: async () => {
       const res = await fetch(
-        "https://yts.mx/api/v2/list_movies.json?query_term=" + searchQuery 
+        "https://yts.lt/api/v2/list_movies.json?query_term=" + searchQuery 
       );
       if (!res.ok) throw new Error("Could not fetch data");
       return res.json();
